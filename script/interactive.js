@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const creditcard = document.querySelector(".card");
+  const form = document.querySelector(".form");
+  const type = document.querySelector(".typeCard");
   
   const name = document.querySelector(".card__name");
   const cardnumber = document.querySelector(".card__number");
@@ -106,10 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
     name.textContent = this.value || defaultName;
   });
 
+  let matchedMask = '';
   inputNumber.addEventListener("input", function () {
     let value = inputNumber.value.replace(/\D/g, "");
     
-    let matchedMask = mask.find(m => m.regex?.test(value)) || mask[mask.length - 1];
+    matchedMask = mask.find(m => m.regex?.test(value)) || mask[mask.length - 1];
+    console.log('matchedMask: ', matchedMask);
 
     
     if (matchedMask.cardType === "Unknown") {
@@ -166,5 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   inputNumber.addEventListener("mouseleave", () => {
     inputNumber.removeAttribute("placeholder");
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('matchedMask: ', matchedMask);
+    type.textContent = matchedMask.cardType;
+    
+    console.log('matchedMask.cardType: ', matchedMask.cardType);
   });
 });

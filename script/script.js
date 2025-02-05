@@ -18,21 +18,22 @@ const cardForm = () => {
   return el("form", {action:"#", class:"form", id:"form"}, [
     el("div.form__input-wrap.form__input-wrap_holder", [
       el("label.form__label.form__holder-label", {for: ""}, "Card Holder"),
-      el("input.input.input__holder", {type:"text"})
+      el("input.input.input__holder", {type:"text", required: true})
     ]),
     el("div.form__input-wrap.form__input-wrap_number", [
       el("label.form__label.form__number-label", {for: ""}, "Card Number"),
-      el("input.input.input__number", {id: "cardNumber"})
+      el("input.input.input__number", {id: "cardNumber", required: true})
     ]),
     el("div.form__input-wrap.form__input-wrap_date", [
       el("label.form__label.form__date-label", {for: ""}, "Card Expiry"),
-      el("input.input.input__date", {type:"text"})
+      el("input.input.input__date", {type:"text", required: true})
     ]),
     el("div.form__input-wrap.form__input-wrap_cvv", [
       el("label.form__label.form__cvv-label", {for: ""}, "CVV"),
-      el("input.input.input__cvv", {type:"text"})
+      el("input.input.input__cvv", {type:"text", required: true})
     ]),
-    el("button.form__button", "CHECK OUT")
+    el("button.form__button", {type: "submit"}, "CHECK OUT"),
+    el("span.typeCard", "")
   ])
 };
 

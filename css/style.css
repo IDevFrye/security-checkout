@@ -185,8 +185,17 @@
   border-radius: 10px;
   border: none;
   padding: 20px 92px;
-  margin: 0 auto;
+  margin: 0 32px;
   cursor: pointer;
+}
+
+.typeCard {
+  font-size: 15px;
+  line-height: 23px;
+  letter-spacing: 0.15em;
+  color: #52006A;
+  text-align: center; 
+  margin: 10px auto;
 }
 
 .input__holder {
