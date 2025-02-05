@@ -1,0 +1,12 @@
+{
+  "name": "security-checkout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redom": "^4.3.0"
+  }
+}
